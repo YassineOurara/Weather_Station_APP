@@ -133,12 +133,13 @@ class _WeatherDataScreenState extends State<WeatherDataScreen> {
       appBar: AppBar(
         backgroundColor: secondaryColor,
         toolbarHeight: 150.0,
+        title: Text('CLIMA sense'),
         leading: Container(
-          width: 150.0,
-          height: 160.0,
-          child: Image.asset('../assets/images/logoStationmeteo.png'),
+          child: Image.asset(
+            '../assets/images/logoStationmeteo.png',
+            height: 96,
+          ),
         ),
-        title: Text('CLIMAsense'),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -150,19 +151,20 @@ class _WeatherDataScreenState extends State<WeatherDataScreen> {
                       children: [
                         Expanded(
                             child: Container(
+                          height: 1001,
                           child: StorageDetails(),
                         )),
                         Expanded(
                           flex: 3,
                           child: Container(
-                            margin: EdgeInsets.all(100.8),
-                            height: 500.0,
+                            margin: EdgeInsets.only(bottom: 400.0),
+                            height: 550.0,
                             child: Card(
                               color: bgColor,
                               child: Column(
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.all(10.0),
+                                    // padding: EdgeInsets.all(10.7),
                                     child: Text(
                                       'Weather Station Data',
                                       style: TextStyle(
@@ -178,7 +180,7 @@ class _WeatherDataScreenState extends State<WeatherDataScreen> {
                                   ),
                                   Expanded(
                                     child: Container(
-                                      padding: EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(10.0),
                                       child: LineChart(
                                         LineChartData(
                                           minX: 0,
@@ -295,7 +297,7 @@ class _WeatherDataScreenState extends State<WeatherDataScreen> {
                         Expanded(
                           flex: 3,
                           child: Container(
-                            height: 500.0,
+                            height: 1001.0,
                             child: SfDataGrid(
                               source: freezePanesDataGridSource,
                               frozenColumnsCount: 1,
@@ -303,7 +305,7 @@ class _WeatherDataScreenState extends State<WeatherDataScreen> {
                                 GridColumn(
                                   columnName: 'date',
                                   label: Container(
-                                    padding: EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(5.0),
                                     alignment: Alignment.centerLeft,
                                     child: Text(
                                       'date',
